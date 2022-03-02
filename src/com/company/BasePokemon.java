@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class BasePokemon {
     private String name;
@@ -10,7 +11,7 @@ public class BasePokemon {
     private int healthPoints;
     private int experience;
     private int maxHealthPoints;
-    private HashMap<String, Integer> attackMoves = new HashMap<String, Integer>();
+    private Map<String, Integer> attackMoves = new HashMap<String, Integer>();
 
     public void setName(String name) {
         this.name = name;
@@ -65,11 +66,17 @@ public class BasePokemon {
     public int getMaxHealthPoints() {
         return maxHealthPoints;
     }
+    public void setAttackMoves(Map<String, Integer> attackMoves) {
+        this.attackMoves = attackMoves;
+    }
+    public Map<String, Integer> getAttackMoves() {
+        return attackMoves;
+    }
 
     //Constructor for BasePokemon
 
     public BasePokemon (String name, String color, double weight, int level, int healthPoints, int experience,
-                        int maxHealthPoints, HashMap<String, Integer> attackMoves) {
+                        int maxHealthPoints) {
         this.name = name;
         this.color = color;
         this.weight = weight;
@@ -77,7 +84,6 @@ public class BasePokemon {
         this.healthPoints = healthPoints;
         this.experience = experience;
         this.maxHealthPoints = maxHealthPoints;
-        this.attackMoves = attackMoves;
     }
 
     //After battle, this method will update experience and level up if over 100
