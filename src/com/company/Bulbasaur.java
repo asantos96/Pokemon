@@ -19,6 +19,18 @@ public class Bulbasaur extends BasePokemon {
         setAttackMoves(bulbasaurAttackMoves);
     }
 
+    //Updates the affected pokemons health after taking damage from the user selected
+    public void attackMove(BasePokemon affectedPokemon, String moveName) {
+            int damage = bulbasaurAttackMoves.get(moveName);
+            affectedPokemon.setHealthPoints(affectedPokemon.getMaxHealthPoints()-damage);
+
+    }
+
+
+
+
+
+
 
 
 }
